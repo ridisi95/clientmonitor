@@ -36,6 +36,7 @@ public class Session {
     @Column(name = "creation_time")
     private Timestamp creationTime;
 
+    //minutes
     @Column(name = "duratation")
     private int duratation;
 

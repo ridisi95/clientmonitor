@@ -29,6 +29,7 @@ CREATE TABLE `sessions` (
 `client_id` int(11) NOT NULL ,
 `type` varchar(45) NOT NULL,
 `creation_time` TIMESTAMP DEFAULT NOW(),
+#duratation in minutes
 `duratation` int(11) NOT NULL,
 `performance` int(3) NOT NULL,
 `diagnostic_id` int(11),
