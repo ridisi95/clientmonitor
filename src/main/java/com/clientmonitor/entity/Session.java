@@ -1,6 +1,7 @@
 package com.clientmonitor.entity;
 
 import com.clientmonitor.enums.SessionType;
+import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -26,7 +27,7 @@ public class Session {
     private int id;
 
     @ManyToOne(cascade= CascadeType.ALL)
-    @JoinColumn(name="client_id")
+    @JoinColumn(name="client_id", updatable = false)
     private Client client;
 
     @Enumerated(EnumType.STRING)
@@ -34,6 +35,7 @@ public class Session {
     private SessionType type;
 
     @Column(name = "creation_time")
+    @CreationTimestamp
     private Timestamp creationTime;
 
     //minutes
