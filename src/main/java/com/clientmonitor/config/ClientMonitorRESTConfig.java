@@ -24,12 +24,12 @@ public class ClientMonitorRESTConfig implements RepositoryRestConfigurer {
     public void configureRepositoryRestConfiguration(RepositoryRestConfiguration config) {
 
         config.getExposureConfiguration()
-                .forDomainType(Client.class)
+                .forDomainType(Session.class)
                 .withCollectionExposure(((metdata, httpMethods) -> httpMethods.disable(new HttpMethod[]{HttpMethod.DELETE, HttpMethod.PUT})))
                 .withItemExposure(((metdata, httpMethods) -> httpMethods.disable(new HttpMethod[]{HttpMethod.PUT})));
 
         config.getExposureConfiguration()
-                .forDomainType(Session.class)
+                .forDomainType(Client.class)
                 .withCollectionExposure(((metdata, httpMethods) -> httpMethods.disable(new HttpMethod[]{HttpMethod.DELETE, HttpMethod.PUT})))
                 .withItemExposure(((metdata, httpMethods) -> httpMethods.disable(new HttpMethod[]{HttpMethod.PUT})))
                 .withAssociationExposure(((metdata, httpMethods) -> httpMethods.disable(new HttpMethod[]{HttpMethod.DELETE, HttpMethod.PUT})));
