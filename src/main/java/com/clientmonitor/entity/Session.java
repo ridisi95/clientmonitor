@@ -2,6 +2,7 @@ package com.clientmonitor.entity;
 
 import com.clientmonitor.enums.SessionType;
 import org.hibernate.annotations.CreationTimestamp;
+import org.springframework.data.annotation.CreatedBy;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -53,6 +54,11 @@ public class Session {
     @JoinColumn(name="diagnostic_id")
     private Diagnostic diagnostic;
 
+    @ManyToOne(cascade= CascadeType.ALL)
+    @JoinColumn(name="user_id")
+    @CreatedBy
+    private User creator;
+
     public int getId() {
         return id;
     }
@@ -103,5 +109,14 @@ public class Session {
 
     public void setDiagnostic(Diagnostic diagnostic) {
         this.diagnostic = diagnostic;
+    }
+
+
+    public User getCreator() {
+        return creator;
+    }
+
+    public void setCreator(User creator) {
+        this.creator = creator;
     }
 }
