@@ -17,8 +17,8 @@ DROP TABLE IF EXISTS `diagnostics`;
 
 CREATE TABLE `diagnostics` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `left_eye` DECIMAL(2,1) DEFAULT NULL,
-  `right_eye` DECIMAL(2,1) DEFAULT NULL,
+  `left_eye` DECIMAL(2,1) DEFAULT (0.0),
+  `right_eye` DECIMAL(2,1) DEFAULT (0.0),
   PRIMARY KEY (`id`)
   ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 
