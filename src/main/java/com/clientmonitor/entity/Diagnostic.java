@@ -6,6 +6,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.DecimalMax;
+import javax.validation.constraints.DecimalMin;
 
 @Entity
 @Table(name = "diagnostics")
@@ -17,9 +19,13 @@ public class Diagnostic {
     private int id;
 
     @Column(name = "left_eye")
+    @DecimalMin("0.0")
+    @DecimalMax("1.0")
     private float leftEye;
 
     @Column(name = "right_eye")
+    @DecimalMin("0.0")
+    @DecimalMax("1.0")
     private float rightEye;
 
     public int getId() {

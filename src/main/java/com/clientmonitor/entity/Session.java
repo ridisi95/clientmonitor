@@ -15,6 +15,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 import java.sql.Timestamp;
 
 @Entity
@@ -43,6 +45,8 @@ public class Session {
     private int duratation;
 
     @Column(name = "performance")
+    @Min(0)
+    @Max(100)
     private int performance;
 
     @OneToOne(cascade = CascadeType.ALL)
